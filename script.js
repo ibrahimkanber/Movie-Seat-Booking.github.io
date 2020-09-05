@@ -33,11 +33,18 @@ function updateSelectedCount() {
 function populateUI() {
     const selectedSeats = JSON.parse(localStorage.getItem("selectedSeats"));
     if (selectedSeats !== null && selectedSeats.length > 0) {
-        seatAll.forEach((seat, index) => {
-            if (selectedSeats.indexOf(index) > -1) {
-                seat.classList.add("selected")
-            }
-        })
+        console.log(selectedSeats)
+
+        //Method1 to change classlist
+        for (let seat of selectedSeats) {
+            console.log(seatAll[seat].classList.add("selected"))
+        }
+        //method 2 to change classlist
+        // seatAll.forEach((seat, index) => {
+        //     if (selectedSeats.indexOf(index) > -1) {
+        //         seat.classList.add("selected")
+        //     }
+        // })
     }
 
     const selectedMovieIndex = localStorage.getItem("selectedMovieIndex")
